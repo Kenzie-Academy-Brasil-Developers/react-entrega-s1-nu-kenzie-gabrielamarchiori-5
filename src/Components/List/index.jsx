@@ -1,3 +1,6 @@
+import trash from '../../assets/trash.png'
+import nocard from '../../assets/NoCard.png'
+
 import { useState } from "react";
 import "./style.css";
 function List({ listTransactions, deleteTransaction }) {
@@ -62,13 +65,13 @@ function filterAll () {
             <h2>Você ainda não possui nenhum lançamento</h2>
             <ul>
               <li>
-                <img src="../src/assets/NoCard.png" alt="nocard" />
+                <img src={nocard} alt="nocard"/>
               </li>
               <li>
-                <img src="../src/assets/NoCard.png" alt="nocard" />
+              <img src={nocard} alt="nocard"/>
               </li>
               <li>
-                <img src="../src/assets/NoCard.png" alt="nocard" />
+              <img src={nocard} alt="nocard"/>
               </li>
             </ul>
           </div>
@@ -86,7 +89,7 @@ function filterAll () {
                         <p>R$ {item.value}, 00</p>
                         <div className="trash">
                           <button onClick={() => deleteTransaction(index)}>
-                            <img src="../src/assets/trash.png" alt="trash" />
+                            <img src={trash} alt="trash" />
                           </button>
                         </div>
                       </div>
@@ -104,7 +107,7 @@ function filterAll () {
                       <p>R$ {item.value}, 00</p>
                       <div className="trash">
                         <button onClick={() => deleteTransaction(index)}>
-                          <img src="../src/assets/trash.png" alt="trash" />
+                        <img src={trash} alt="trash" />
                         </button>
                       </div>
                     </div>
