@@ -10,9 +10,14 @@ function App() {
   const [listTransactions, setListTransactions] = useState([
     { description: "Salário recebido", type: "Entrada", value: 2500 },
     { description: "Conta de luz", type: "Saída", value: -150 }
-  ])
+])
 
-  function addTransactions (description, type, value) {
+function addTransactions (description, type, value) {
+    
+    if (type == 'Saída' || type == 'saída') {
+      value = -value
+      type = 'Despesa'
+    }
 
     if(type == 'selecao' || type == '') {
       alert ('Escolha um tipo de transação')
@@ -20,7 +25,7 @@ function App() {
      
       setListTransactions([...listTransactions, {description, type, value}]) 
     }
-             
+    console.log(listTransactions)
   }
 
   function deleteTransaction (index) {
@@ -31,9 +36,6 @@ function App() {
     setListTransactions(filterTransaction);
   }
   
-
- 
-      
   return (
     <div className="App">
       <header className='App-header'>
