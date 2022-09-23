@@ -14,9 +14,9 @@ function App() {
 
 function addTransactions (description, type, value) {
     
-    if (type == 'Saída' || type == 'saída') {
+    if (type == 'Saída' || type == 'Despesa') {
       value = -value
-      type = 'Despesa'
+      // type = 'Despesa'
     }
 
     if(type == 'selecao' || type == '') {
@@ -48,7 +48,7 @@ function addTransactions (description, type, value) {
           <TotalMoney listTransactions={listTransactions}/>
         </div>
         <div className='transacoes'>
-          <List listTransactions={listTransactions} setListTransactions={setListTransactions} deleteTransaction={deleteTransaction}/>
+          <List listTransactions={listTransactions} deleteTransaction={deleteTransaction}/>
         </div>
      
       </main>

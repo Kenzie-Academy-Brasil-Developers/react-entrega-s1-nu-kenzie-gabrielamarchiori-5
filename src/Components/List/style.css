@@ -80,6 +80,10 @@
     margin-bottom: 10px;
 }
 
+.List-descricao h2::first-letter {
+    text-transform: capitalize;
+}
+
 .List-descricao p {
     font-family: var(--font-1);
     font-weight: var(--font-weigth-1);

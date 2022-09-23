@@ -1,23 +1,35 @@
+import { useState } from "react";
 import "./style.css";
-function List({ listTransactions, setListTransactions, deleteTransaction }) {
-  const allTransictions = listTransactions.filter((element) => {
-    return element.type == "Entrada" || element.type == "Saída";
-  });
+function List({ listTransactions, deleteTransaction }) {
+  
+const [filterTransaction, setFilterTransaction] = useState([])
+  
+function filterAll () {
 
-  console.log(allTransictions);
+      setFilterTransaction([])
+}  
 
-  const inTransictions = listTransactions.filter((element) => {
-    return element.type == "Entrada";
-  });
 
-  console.log(inTransictions);
+   function filterIns () {
+      const inTransictions = listTransactions.filter((element) => {
+        return element.type == "Entrada";
+      });
 
-  const outTransictions = listTransactions.filter((element) => {
-    return element.type == "Saída";
-  });
+      setFilterTransaction (inTransictions)
 
-  console.log(outTransictions);
+  }
 
+  function filterOut () {
+
+      const outTransictions = listTransactions.filter((element) => {
+        return element.type == "Saída" || element.type == 'Despesa';
+      });
+
+      setFilterTransaction(outTransictions)
+  }
+ 
+
+ 
   return (
     <div className="List">
       <div className="List-header">
@@ -25,19 +37,19 @@ function List({ listTransactions, setListTransactions, deleteTransaction }) {
         <div className="header-btn">
           <button
             type="button"
-            onClick={() => setListTransactions(allTransictions)}
+            onClick={filterAll}
           >
             Todos
           </button>
           <button
             type="button"
-            onClick={() => setListTransactions(inTransictions)}
+            onClick={filterIns}
           >
             Entradas
           </button>
           <button
             type="button"
-            onClick={() => setListTransactions(outTransictions)}
+            onClick={filterOut}
           >
             Despesas
           </button>
@@ -62,22 +74,43 @@ function List({ listTransactions, setListTransactions, deleteTransaction }) {
           </div>
         ) : (
           <ul>
-            {listTransactions.map((item, index) => (
-              <li key={index} className={item.type}>
-                <div className="List-descricao">
-                  <h2>{item.description}</h2>
-                  <p>{item.type}</p>
-                </div>
-                <div className="List-valor">
-                  <p>R$ {item.value}, 00</p>
-                  <div className="trash">
-                    <button onClick={() => deleteTransaction(index)}>
-                      <img src="../src/assets/trash.png" alt="trash" />
-                    </button>
-                  </div>
-                </div>
-              </li>
-            ))}
+            {filterTransaction.length > 0 ? (
+                
+                filterTransaction.map((item, index) => (
+                    <li key={index} className={item.type}>
+                      <div className="List-descricao">
+                        <h2>{item.description}</h2>
+                        <p>{item.type}</p>
+                      </div>
+                      <div className="List-valor">
+                        <p>R$ {item.value}, 00</p>
+                        <div className="trash">
+                          <button onClick={() => deleteTransaction(index)}>
+                            <img src="../src/assets/trash.png" alt="trash" />
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                  ))
+            ): (
+                
+                listTransactions.map((item, index) => (
+                  <li key={index} className={item.type}>
+                    <div className="List-descricao">
+                      <h2>{item.description}</h2>
+                      <p>{item.type}</p>
+                    </div>
+                    <div className="List-valor">
+                      <p>R$ {item.value}, 00</p>
+                      <div className="trash">
+                        <button onClick={() => deleteTransaction(index)}>
+                          <img src="../src/assets/trash.png" alt="trash" />
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                ))
+            )}
           </ul>
         )}
       </div>
