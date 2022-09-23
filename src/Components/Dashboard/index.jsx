@@ -1,4 +1,5 @@
 import './style.css'
+import nukenziewhite from '../../assets/Nu Kenzie.png'
 
 import { useState } from 'react'
 import Form from '../Form'
@@ -40,7 +41,7 @@ function addTransactions (description, type, value) {
   return (
     <div className="App">
       <header className='App-header'>
-        <img src="../src/assets/Nu Kenzie.png" alt="" />
+        <img src={nukenziewhite} alt="Logo" />
         <button onClick={Dash}>Início</button>
       </header>
       <main className='App-main'>
