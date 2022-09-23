@@ -1,6 +1,10 @@
 import './style.css'
 
-function TotalMoney () {
+function TotalMoney ({listTransactions}) {
+
+    const soma = listTransactions.reduce((valorAnterior, valorAtual) => {
+        return valorAnterior + Number(valorAtual.value)
+      },0)
 
     return (
         <div className='soma'>
@@ -9,7 +13,7 @@ function TotalMoney () {
                 <p>O valor se refere ao saldo</p>
             </div>
             <div className='soma-number'>
-                <p>R$ 7883</p>
+                <p>R$ {soma},00</p>
             </div>
         </div>
     )

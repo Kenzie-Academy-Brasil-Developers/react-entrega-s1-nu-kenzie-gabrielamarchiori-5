@@ -3,10 +3,11 @@
     justify-content: space-between;
     align-items: flex-start;
 
-    border: 1px solid #E9ECEF;
-    border-radius: 4px;
+    border: 1px solid var(--color-grey-2);
+    border-radius: var(--radius-1);
 
-    padding: 30px;
+    padding: 20px 10px;
+    margin-bottom: 30px;
 }
 
 .soma-text {
@@ -16,22 +17,32 @@
 }
 
 .soma-text h2 {
-    font-family: 'Nunito';
-    font-weight: 700;
-    font-size: 16px;
-    color: #212529;
+    font-family: var(--font-1);
+    font-weight: var(--font-weigth-4);
+    font-size: var(--font-size-4);
+    color: var(--color-grey-4);
+
+    margin-bottom: 10px;
 }
 
 .soma-text p {
-    font-family: 'Nunito';
-    font-weight: 400;
-    font-size: 12px;
-    color: #343A40;
+    font-family: var(--font-1);
+    font-weight: var(--font-weigth-1);
+    font-size: var(--font-size-6);
+    color: var(--color-grey-4);
 }
 
 .soma-number p {
-    font-family: 'Nunito';
-    font-weight: 700;
-    font-size: 16px;
-    color: #FD377E;
+    font-family: var(--font-1);
+    font-weight: var(--font-weigth-4);
+    font-size: var(--font-size-5);
+    color: var(--color-primary-1);
+}
+
+@media (min-width:769px) {
+ 
+    .soma-number p {
+        font-size: var(--font-size-4);
+    }
+    
 }
