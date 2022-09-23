@@ -1,5 +1,7 @@
 import './style.css'
 
+import imglogo from '../../assets/Logo.png'
+
 function LandingPage ({Landing}) {
     return (
         <div className='container'>
@@ -11,7 +13,7 @@ function LandingPage ({Landing}) {
                 <button onClick={Landing}>Iniciar</button>
             </div>
             <div className='rigth-side'>
-                <img src="../src/assets/illustration.png" alt="" />
+                <img src={imglogo} alt="" />
             </div>
         </div>
 
