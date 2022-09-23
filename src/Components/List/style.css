@@ -1,0 +1,171 @@
+.List-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.List-header h2 {
+    font-family: var(--font-1);
+    font-weight: var(--font-weigth-4);
+    font-size: var(--font-size-5);
+    color: var(--color-grey-4);
+
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.header-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.header-btn button {
+    font-family: var(--font-1);
+    font-weight: var(--font-weigth-3);
+    font-size: var(--font-size-6);
+    text-align: center;
+    color: var(--color-grey-4);
+    
+    background-color: var(--color-grey-2);
+    border: transparent;
+    border-radius: var(--radius-2);
+    
+    padding: 5px 10px;
+    margin-bottom: 30px;
+}
+
+.header-btn button:hover {
+    background-color: var(--color-primary-1);
+    color: var(--color-grey-1); 
+}
+
+.header-btn button:nth-child(1) {
+    background-color: var(--color-primary-1);
+    color: var(--color-grey-1);  
+}
+
+.List-main ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background-color: var(--color-grey-1);
+    border-radius: var(--radius-1);
+    border-left: 4px solid var(--color-grey-2);
+
+    margin-bottom: 25px;
+    padding: 10px 0;
+
+    width: 100%;
+}
+
+.List-main ul .Entrada {
+    border-left: 4px solid var(--color-secundary);
+}
+
+.List-descricao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-left: 20px;
+}
+
+.List-descricao h2 {
+    font-family: var(--font-1);
+    font-weight: var(--font-weigth-4);
+    font-size: var(--font-size-5);
+    color: var(--color-grey-4);
+
+    margin-bottom: 10px;
+}
+
+.List-descricao h2::first-letter {
+    text-transform: capitalize;
+}
+
+.List-descricao p {
+    font-family: var(--font-1);
+    font-weight: var(--font-weigth-1);
+    font-size: var(--font-size-6);
+    color: var(--color-grey-4);
+}
+
+.List-valor {
+    display: flex;
+    align-items: center;
+    
+    margin-right: 20px;
+}
+
+.List-valor p {
+    font-family: var(--font-1);
+    font-weight: var(--font-weigth-1);
+    font-size: 10px;
+    color: var(--color-grey-4);
+
+    margin-right: 20px;
+}
+
+.trash button {
+    width: 22px;
+    height: 22px;
+    
+    background-color: var(--color-grey-2);
+    border: transparent;
+    border-radius: var(--radius-1);
+}
+
+.landing-page {
+    width: 100%;
+}
+
+.landing-page h2 {
+    font-family: var(--font-1);
+    font-weight: var(--font-weigth-4);
+    font-size: var(--font-size-6);
+    color: var(--color-grey-4);
+
+    margin-bottom: 30px;
+}
+
+.landing-page ul li img {
+    width: 100%;
+}
+
+@media (min-width:769px) {
+    
+    .List {
+        margin-left: 30px;
+    }
+
+    .List-header {
+        flex-direction: row;
+    }
+    .List-header h2 {
+        font-size: var(--font-size-4);
+        margin-bottom: 0px;
+    }
+
+    .header-btn button {
+        font-size: var(--font-size-5);
+        padding: 10px;
+    }
+
+    .List-descricao h2 {
+       font-size: var(--font-size-4);
+    }
+
+    .List-valor p {
+        font-size: var(--font-size-5);
+        color: var(--color-grey-4);
+    
+        margin-right: 40px;
+    }
+
+    .landing-page h2 {
+        font-size: var(--font-size-4);
+    }
+    
+    
+}
